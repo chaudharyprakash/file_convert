@@ -1,0 +1,15 @@
+<style>
+	.pdf_image
+	{
+		width: 500px;
+		height: relative;
+	}
+</style>
+
+<p><%= @path_in %></p><br>
+<p><%= @relative_path %></p><br>
+
+<p>Converted Images:</p>
+<% @images.each do |image| %>
+<%= image_tag @relative_path+image, :class => "pdf_image" %>
+<% end %>

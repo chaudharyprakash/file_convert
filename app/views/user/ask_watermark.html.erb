@@ -1,0 +1,84 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('select').material_select();
+	});
+
+	function show_them_to_me()
+	{
+		var what = document.getElementById("w-type").value;
+		if(what=="image") {
+			$("#image-watermark").removeClass("none");
+			$("#image-watermark").addClass("showDIV");
+			$("#text-watermark").removeClass("showDIV");
+			$("#text-watermark").addClass("none");
+		}
+
+		else if(what=="text") {
+			$("#image-watermark").removeClass("showDIV");
+			$("#image-watermark").addClass("none");
+			$("#text-watermark").removeClass("none");
+			$("#text-watermark").addClass("showDIV");
+		}
+	}
+</script>
+<style> 
+	.none { display:none; }, 
+	.showDIV { display:block; } 
+</style>
+
+
+<div class="input-field col s4">
+	<select id="w-type" onchange="show_them_to_me();">
+		<option value="" disabled selected>Choose the type of watermark you wan to add</option>
+		<option value="image">Image</option>
+		<option value="text">Text</option>
+	</select>
+	<label>Watermark Type</label>
+</div>
+
+<div id="image-watermark" class="none">
+	<%= form_tag({action: :do_watermark_image}, multipart: true) do %>
+	  <%= file_field_tag 'picture' %>
+
+	<div class="input-field col s4">
+		<select id="transparency" class="fontSelect" name="transparency">
+			<option value="1">No transparency</option>
+			<option value="75">75%</option>
+			<option value="50">50%</option>
+			<option value="25">25%</option>
+		</select>
+	</div>
+
+	<div class="input-field col s4">
+		<select id="position" name='position'>
+			<option value="" disabled selected>Select a position for watermark</option>
+			<option value="northeast">Top-Right</option>
+			<option value="north">Top-Center</option>
+			<option value="northwest">Top-Left</option>
+			<option value="east">Middle-Right</option>
+			<option value="center">Middle-Center</option>
+			<option value="west">Middle-Left</option>
+			<option value="southeast">Bottom-Right</option>
+			<option value="south">Bottom-Center</option>
+			<option value="southwest">Bottom-Left</option>
+		</select>
+		<label>Watermark Position</label>
+	</div>
+	<!--
+	<div class="input-field col s4">
+		<select id="rotation" name="rotation">
+			<option value="" disabled selected>Select rotation for your watermark</option>
+			<option value="45">45 degrees</option>
+			<option value="90">90 degrees</option>
+			<option value="180">180 degrees</option>
+			<option value="270">270 degrees</option>
+		</select>
+		<label>Watermark rotation</label>
+	</div>
+	-->
+	<%= submit_tag "Upload Image",class:"btn btn-primary " %>
+	<% end %>
+
+	<div id="text-watermark" class="none">
+		text
+	</div>

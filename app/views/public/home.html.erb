@@ -1,0 +1,399 @@
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<!--Import Google Icon Font-->
+ 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ </head>
+ 
+<style>
+ 	.promo {
+ 		outline: 4px solid #ccc;
+ 		height: 200px;
+ 	}
+
+ 	.material-icons {
+ 		padding-top: 10px;
+ 	}
+
+ 	.promo:hover {
+ 		background-color: #ECECEC;
+ 	}
+
+ 	.block-link {
+ 		color: black;
+ 	}
+
+ 	.options-icons {
+ 		background-position: center bottom;
+ 		margin-top: 20px;
+ 		height: 50px;
+ 		display: block;
+ 		background-repeat: no-repeat;
+ 		width: 50px;
+ 		margin-right: 0;
+ 	}
+
+ 	.options-icons-hover {
+ 		margin-top: 20px;
+ 		height: 50px;
+ 		display: block;
+ 		background-repeat: no-repeat;
+ 		width: 50px;
+ 		margin-right: 0;
+ 	}
+
+ 	.big-icon {
+ 		height: 60px;
+ 	}
+ 	.merge-pdf {
+ 		background-image: url(<%= asset_path 'merge_pdf.png' %>);
+ 	}
+
+ 	.split-pdf {
+ 		background-image: url(<%= asset_path 'split_pdf.png' %>);
+ 	}
+
+ 	.compress-pdf {
+ 		background-image: url(<%= asset_path 'compress_pdf.png' %>);
+ 	}
+
+ 	.pdf-word {
+ 		background-image: url(<%= asset_path 'pdf_to_word.png' %>);
+ 	}
+
+ 	.word-pdf {
+ 		background-image: url(<%= asset_path 'word_to_pdf.png' %>);
+ 	}
+
+ 	.pdf-ppt {
+ 		background-image: url(<%= asset_path 'pdf_to_powerpoint.png' %>);
+ 	}
+
+ 	.ppt-pdf {
+ 		background-image: url(<%= asset_path 'powerpoint_to_pdf.png' %>);
+ 	}
+	
+ 	.pdf-excel {
+ 		background-image: url(<%= asset_path 'pdf_to_excel.png' %>);
+ 	}
+
+ 	.excel-pdf {
+ 		background-image: url(<%= asset_path 'excel_to_pdf.png' %>);
+ 	}
+ 	.pdf-jpg {
+ 		background-image: url(<%= asset_path 'pdf_to_jpg.png' %>);
+ 	}
+ 	.jpg-pdf {
+ 		background-image: url(<%= asset_path 'jpg_to_pdf.png' %>);
+ 	}
+ 	.pagenumbers {
+ 		background-image: url(<%= asset_path 'pagenumber_pdf.png' %>);
+ 	}
+ 	.watermark {
+ 		background-image: url(<%= asset_path 'watermark_pdf.png' %>);
+ 	}
+ 	.unlock-pdf {
+ 		background-image: url(<%= asset_path 'unlock_pdf.png' %>);
+ 	}
+ 	.rotate-pdf {
+ 		background-image: url(<%= asset_path 'rotate_pdf.png' %>);
+ 	}
+ </style>
+ <script type="text/javascript">
+
+ 	$(document).ready(function() {
+ 		$("#merge-pdf").hover(function() {
+ 			$('.merge-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.merge-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#split-pdf").hover(function() {
+ 			$('.split-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.split-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#compress-pdf").hover(function() {
+ 			$('.compress-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.compress-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#pdf-word").hover(function() {
+ 			$('.pdf-word').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.pdf-word').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#word-pdf").hover(function() {
+ 			$('.word-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.word-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#ppt-pdf").hover(function() {
+ 			$('.ppt-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.ppt-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+		$("#pdf-ppt").hover(function() {
+ 			$('.pdf-ppt').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.pdf-ppt').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#excel-pdf").hover(function() {
+ 			$('.excel-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.excel-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#pdf-excel").hover(function() {
+ 			$('.pdf-excel').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.pdf-excel').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#watermark").hover(function() {
+ 			$('.watermark').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.watermark').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#pagenumbers").hover(function() {
+ 			$('.pagenumbers').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.pagenumbers').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#rotate-pdf").hover(function() {
+ 			$('.rotate-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.rotate-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#unlock-pdf").hover(function() {
+ 			$('.unlock-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.unlock-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#watermark").hover(function() {
+ 			$('.watermark').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.watermark').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#jpg-pdf").hover(function() {
+ 			$('.jpg-pdf').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.jpg-pdf').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		$("#pdf-jpg").hover(function() {
+ 			$('.pdf-jpg').addClass('options-icons-hover').removeClass('options-icons');
+ 		},
+ 		function() {
+ 			$('.pdf-jpg').addClass('options-icons').removeClass('options-icons-hover');
+ 		});
+ 		
+ 	});
+ </script>
+ <body>
+ 	<header>
+ 		<nav class="top-nav">
+ 			<div class="container top">
+ 				<a href="#!" class="brand-logo">Logo</a>
+ 			</div>
+ 		</nav>
+
+ 		<ul id="dropdown1" class="dropdown-content">
+ 			<li><a href="#!">one</a></li>
+ 			<li><a href="#!">two</a></li>
+ 			<!-- <li class="divider"></li> -->
+ 			<li><a href="#!">three</a></li>
+ 		</ul>
+ 		<nav>
+
+ 			<div class="nav-wrapper menu">
+ 				<div class="container menu">
+ 					<ul class="hide-on-med-and-down">
+ 						<li><a href=".html">link1</a></li>
+ 						<li><a href=".html">link2</a></li>
+ 						<!-- Dropdown Trigger -->
+ 						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</nav>
+ 	</header>
+
+ 	<div class="container">
+ 		<!-- Page Content goes here -->
+ 		<br><br>
+ 		<div class="row">
+ 			<a id="merge-pdf" class="block-link" href="<%= user_merge_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons merge-pdf"></i>
+ 						<p class="promo-caption">Merge PDF</p>
+ 						<p class="light center">Combine PDFs in the order you want with the easiest PDF merger available.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="split-pdf" class="block-link" href="<%= user_split_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons split-pdf"></i>
+ 						<p class="promo-caption">Split PDF</p>
+ 						<p class="light center">Separate one page or a whole set for easy conversion into independent PDF files.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id ="compress-pdf" class="block-link" href="<%= user_compress_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons compress-pdf"></i>
+ 						<p class="promo-caption">Compress PDF</p>
+ 						<p class="light center"><p>Reduce file size while optimizing for maximal PDF quality.</p></p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 		</div>
+ 		<br>
+ 		<div class="row">
+ 			<a id="pdf-word" class="block-link" href="<%= user_pdf_to_word_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons pdf-word big-icon"></i>
+ 						<p class="promo-caption">PDF to WORD</p>
+ 						<p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="pdf-ppt" class="block-link" href="<%= user_pdf_to_ppt_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons pdf-ppt big-icon"></i>
+ 						<p class="promo-caption">PDF to PPT</p>
+ 						<p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="pdf-excel" class="block-link" href="<%= user_pdf_to_excel_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons pdf-excel big-icon"></i>
+ 						<p class="promo-caption">PDF to EXCEL</p>
+ 						<p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 		</div>
+ 		<br>
+ 		<div class="row">
+ 			<a id="word-pdf" class="block-link" href="<%= user_word_to_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons word-pdf big-icon"></i>
+ 						<p class="promo-caption">WORD to PDF</p>
+ 						<p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="ppt-pdf" class="block-link" href="<%= user_ppt_to_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons ppt-pdf big-icon"></i>
+ 						<p class="promo-caption">PPT to PDF</p>
+ 						<p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="excel-pdf" class="block-link" href="<%= user_excel_to_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons excel-pdf big-icon"></i>
+ 						<p class="promo-caption">EXCEL to PDF</p>
+ 						<p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 		</div>
+ 		<br>
+ 		<div class="row">
+ 			<a id="pdf-jpg" class="block-link" href="<%= user_pdf_to_jpg_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons pdf-jpg"></i>
+ 						<p class="promo-caption">PDF to JPG</p>
+ 						<p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="jpg-pdf" class="block-link" href="<%= user_jpg_to_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons jpg-pdf"></i>
+ 						<p class="promo-caption">JPG to PDF</p>
+ 						<p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="pagenumbers" class="block-link" href="">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons pagenumbers"></i>
+ 						<p class="promo-caption">Page Numbers</p>
+ 						<p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 		</div>
+ 		<br>
+ 		<div class="row">
+ 			<a id="watermark" class="block-link" href="<%= user_watermark_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons watermark"></i>
+ 						<p class="promo-caption">Watermark</p>
+ 						<p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="unlock-pdf" class="block-link" href="<%= user_unlock_pdf_path %>">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons unlock-pdf"></i>
+ 						<p class="promo-caption">Unlock PDF</p>
+ 						<p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+ 			<a id="rotate-pdf" class="block-link" href="">
+ 				<div class="col s4">
+ 					<div class="center promo promo-example">
+ 						<i class="options-icons rotate-pdf"></i>
+ 						<p class="promo-caption">Rotate PDF</p>
+ 						<p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+ 					</div>
+ 				</div>
+ 			</a>
+			
+			
+ 		</div>
+ 		<br>
+
+ 	</div>
+
+ 	<br>
+ 	<br>
+
+
+ </div>
+</body>
+
+</html>
